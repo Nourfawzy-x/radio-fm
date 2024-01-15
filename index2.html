@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Album</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Your custom CSS styles -->
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .audio-player {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="mt-4 mb-4">Audio Album</h1>
+
+  <!-- Audio Player Section -->
+  <div class="audio-player">
+    <h3>Track 1: Song Title 1</h3>
+    <audio id="audio1" controls>
+      <source src="../html5 day2/ambient-piano-and-strings-10711.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  <div class="audio-player">
+    <h3>Track 2: Song Title 2</h3>
+    <audio id="audio2" controls>
+      <source src="../html5 day2/forest-lullaby-110624.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  <div class="audio-player">
+    <h3>Track 3: Song Title 3</h3>
+    <audio id="audio3" controls>
+      <source src="../html5 day2/just-relax-11157.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  <div class="audio-player">
+    <h3>Track 4: Song Title 4</h3>
+    <audio id="audio4" controls>
+      <source src="audio/track4.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  <div class="audio-player">
+    <h3>Track 5: Song Title 5</h3>
+    <audio id="audio5" controls>
+      <source src="audio/track5.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+  // Pause all other audio elements when one is played
+  $('audio').on('play', function() {
+    $('audio').not(this).each(function() {
+      this.pause();
+      this.currentTime = 0;
+    });
+  });
+</script>
+
+</body>
+</html>
